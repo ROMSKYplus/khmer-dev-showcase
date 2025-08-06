@@ -10,7 +10,7 @@ interface AboutSectionProps {
 export const AboutSection = ({ language }: AboutSectionProps) => {
   const content = {
     en: {
-      title: "About Me",
+      title: "About Bro",
       subtitle: "Passionate developer with a strong foundation in computer science",
       description: "I'm a dedicated full-stack developer with a Computer Science degree from the Royal University of Fine Arts and Phnom Penh (RUPP). I specialize in creating modern web applications and software solutions that solve real-world problems. My journey in programming started with a curiosity about how technology can improve people's lives, especially in Cambodia.",
       education: {
