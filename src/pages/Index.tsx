@@ -1,12 +1,47 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState, useEffect } from "react";
+import { Header } from "@/components/Header";
+import { HeroSection } from "@/components/HeroSection";
+import { AboutSection } from "@/components/AboutSection";
+import { ProjectsSection } from "@/components/ProjectsSection";
+import { VideosSection } from "@/components/VideosSection";
+import { StoreSection } from "@/components/StoreSection";
+import { BlogSection } from "@/components/BlogSection";
+import { ContactSection } from "@/components/ContactSection";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
+  const [isDark, setIsDark] = useState(false);
+  const [language, setLanguage] = useState('km'); // Default to Khmer
+
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDark]);
+
+  const toggleTheme = () => setIsDark(!isDark);
+  const toggleLanguage = () => setLanguage(language === 'km' ? 'en' : 'km');
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Header 
+        isDark={isDark} 
+        toggleTheme={toggleTheme}
+        language={language}
+        toggleLanguage={toggleLanguage}
+      />
+      <main>
+        <HeroSection language={language} />
+        <AboutSection language={language} />
+        <ProjectsSection language={language} />
+        <VideosSection language={language} />
+        <StoreSection language={language} />
+        <BlogSection language={language} />
+        <ContactSection language={language} />
+      </main>
+      <Footer language={language} />
     </div>
   );
 };
