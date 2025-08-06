@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ShoppingCart, Star, Download, ExternalLink, Zap, Shield, Headphones } from "lucide-react";
+import { ShoppingCart, Star, Download, ExternalLink, Zap, Shield, Headphones, Mail } from "lucide-react";
 
 interface StoreSectionProps {
   language: string;
@@ -28,11 +28,14 @@ export const StoreSection = ({ language }: StoreSectionProps) => {
           originalPrice: "$399",
           rating: 4.8,
           reviewCount: 156,
-          image: "/api/placeholder/300/200",
+          image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=300&fit=crop&crop=center",
           tags: ["Laravel", "Vue.js", "MySQL"],
           features: ["POS System", "Inventory", "Analytics", "Multi-language"],
           badge: "bestseller",
-          onSale: true
+          onSale: true,
+          demoUrl: "https://restaurant-pos-demo.vercel.app",
+          purchaseUrl: "https://gumroad.com/l/restaurant-management",
+          downloadUrl: "https://github.com/yourusername/restaurant-pos/releases"
         },
         {
           title: "E-learning Platform",
@@ -41,11 +44,14 @@ export const StoreSection = ({ language }: StoreSectionProps) => {
           originalPrice: null,
           rating: 4.9,
           reviewCount: 89,
-          image: "/api/placeholder/300/200",
+          image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=400&h=300&fit=crop&crop=center",
           tags: ["React", "Node.js", "MongoDB"],
           features: ["Video Streaming", "Quizzes", "Certificates", "Mobile App"],
           badge: "new",
-          onSale: false
+          onSale: false,
+          demoUrl: "https://elearning-demo.netlify.app",
+          purchaseUrl: "https://gumroad.com/l/elearning-platform",
+          downloadUrl: "https://github.com/yourusername/elearning-platform/releases"
         },
         {
           title: "Inventory Management Pro",
@@ -54,11 +60,14 @@ export const StoreSection = ({ language }: StoreSectionProps) => {
           originalPrice: null,
           rating: 4.7,
           reviewCount: 203,
-          image: "/api/placeholder/300/200",
+          image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=300&fit=crop&crop=center",
           tags: ["Laravel", "React", "PostgreSQL"],
           features: ["Barcode Scanner", "Auto-ordering", "Reports", "Multi-store"],
           badge: null,
-          onSale: false
+          onSale: false,
+          demoUrl: "https://inventory-pro-demo.herokuapp.com",
+          purchaseUrl: "https://gumroad.com/l/inventory-management-pro",
+          downloadUrl: "https://github.com/yourusername/inventory-management/releases"
         },
         {
           title: "Project Management Suite",
@@ -67,11 +76,14 @@ export const StoreSection = ({ language }: StoreSectionProps) => {
           originalPrice: "$249",
           rating: 4.6,
           reviewCount: 134,
-          image: "/api/placeholder/300/200",
+          image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop&crop=center",
           tags: ["Vue.js", "Express", "MySQL"],
           features: ["Team Collaboration", "Time Tracking", "Client Portal", "Mobile App"],
           badge: null,
-          onSale: true
+          onSale: true,
+          demoUrl: "https://project-suite-demo.vercel.app",
+          purchaseUrl: "https://gumroad.com/l/project-management-suite",
+          downloadUrl: "https://github.com/yourusername/project-management/releases"
         }
       ],
       guarantees: [
@@ -111,11 +123,14 @@ export const StoreSection = ({ language }: StoreSectionProps) => {
           originalPrice: "$៣៩៩",
           rating: 4.8,
           reviewCount: 156,
-          image: "/api/placeholder/300/200",
+          image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=300&fit=crop&crop=center",
           tags: ["Laravel", "Vue.js", "MySQL"],
           features: ["ប្រព័ន្ធ POS", "គ្រប់គ្រងស្តុក", "ការវិភាគ", "ពហុភាសា"],
           badge: "bestseller",
-          onSale: true
+          onSale: true,
+          demoUrl: "https://restaurant-pos-demo.vercel.app",
+          purchaseUrl: "https://gumroad.com/l/restaurant-management",
+          downloadUrl: "https://github.com/yourusername/restaurant-pos/releases"
         },
         {
           title: "វេទិកាអេឡិចត្រូនិក",
@@ -124,11 +139,14 @@ export const StoreSection = ({ language }: StoreSectionProps) => {
           originalPrice: null,
           rating: 4.9,
           reviewCount: 89,
-          image: "/api/placeholder/300/200",
+          image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=400&h=300&fit=crop&crop=center",
           tags: ["React", "Node.js", "MongoDB"],
           features: ["ចាក់វីដេអូ", "កម្រងសំណួរ", "វិញ្ញាបនបត្រ", "កម្មវិធីទូរស័ព្ទ"],
           badge: "new",
-          onSale: false
+          onSale: false,
+          demoUrl: "https://elearning-demo.netlify.app",
+          purchaseUrl: "https://gumroad.com/l/elearning-platform",
+          downloadUrl: "https://github.com/yourusername/elearning-platform/releases"
         },
         {
           title: "គ្រប់គ្រងស្តុកទំនិញអាជីព",
@@ -137,11 +155,14 @@ export const StoreSection = ({ language }: StoreSectionProps) => {
           originalPrice: null,
           rating: 4.7,
           reviewCount: 203,
-          image: "/api/placeholder/300/200",
+          image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=300&fit=crop&crop=center",
           tags: ["Laravel", "React", "PostgreSQL"],
           features: ["ស្កេនបាកូដ", "បញ្ជាទិញស្វ័យប្រវត្តិ", "របាយការណ៍", "ហាងច្រើន"],
           badge: null,
-          onSale: false
+          onSale: false,
+          demoUrl: "https://inventory-pro-demo.herokuapp.com",
+          purchaseUrl: "https://gumroad.com/l/inventory-management-pro",
+          downloadUrl: "https://github.com/yourusername/inventory-management/releases"
         },
         {
           title: "ឈុតគ្រប់គ្រងគម្រោង",
@@ -150,11 +171,14 @@ export const StoreSection = ({ language }: StoreSectionProps) => {
           originalPrice: "$២៤៉",
           rating: 4.6,
           reviewCount: 134,
-          image: "/api/placeholder/300/200",
+          image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop&crop=center",
           tags: ["Vue.js", "Express", "MySQL"],
           features: ["សហការក្រុម", "តាមដានពេល", "ច្រកអតិថិជន", "កម្មវិធីទូរស័ព្ទ"],
           badge: null,
-          onSale: true
+          onSale: true,
+          demoUrl: "https://project-suite-demo.vercel.app",
+          purchaseUrl: "https://gumroad.com/l/project-management-suite",
+          downloadUrl: "https://github.com/yourusername/project-management/releases"
         }
       ],
       guarantees: [
@@ -178,6 +202,54 @@ export const StoreSection = ({ language }: StoreSectionProps) => {
   };
 
   const text = content[language as keyof typeof content] || content.km;
+
+  // Enhanced link opening function with analytics tracking
+  const openLink = (url: string, linkType: 'demo' | 'purchase' | 'download' | 'contact' = 'demo', productTitle?: string) => {
+    if (!url || url === "#") {
+      console.warn(`Invalid URL for ${productTitle || 'product'}: ${url}`);
+      return;
+    }
+    
+    // Optional: Track link clicks for analytics
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'click', {
+        event_category: 'Store Link',
+        event_label: `${productTitle} - ${linkType}`,
+        value: linkType === 'purchase' ? 1 : 0
+      });
+    }
+    
+    try {
+      window.open(url, "_blank", "noopener,noreferrer");
+    } catch (error) {
+      console.error(`Failed to open link: ${url}`, error);
+      window.location.href = url;
+    }
+  };
+
+  // Handle purchase with confirmation
+  const handlePurchase = (product: any) => {
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'begin_checkout', {
+        event_category: 'Store',
+        event_label: product.title,
+        value: parseFloat(product.price.replace('$', '').replace('៉', '').replace('១', '1').replace('២', '2').replace('៣', '3').replace('៤', '4').replace('៥', '5').replace('៦', '6').replace('៧', '7').replace('៨', '8').replace('៩', '9')),
+        currency: 'USD'
+      });
+    }
+    
+    openLink(product.purchaseUrl, 'purchase', product.title);
+  };
+
+  // Handle image errors
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>, productTitle: string) => {
+    const target = e.target as HTMLImageElement;
+    target.style.display = 'none';
+    const fallbackDiv = target.nextElementSibling as HTMLDivElement;
+    if (fallbackDiv) {
+      fallbackDiv.style.display = 'flex';
+    }
+  };
 
   const getBadgeText = (badge: string | null) => {
     if (!badge) return null;
@@ -214,9 +286,21 @@ export const StoreSection = ({ language }: StoreSectionProps) => {
           {text.products.map((product, index) => (
             <Card key={index} className="overflow-hidden hover:shadow-xl transition-all duration-300 border-0">
               <div className="relative">
-                <div className="aspect-video bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
-                  <div className="text-4xl font-bold text-primary/30">
-                    {product.title.charAt(0)}
+                <div className="aspect-video relative overflow-hidden">
+                  <img
+                    src={product.image}
+                    alt={product.title}
+                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                    onError={(e) => handleImageError(e, product.title)}
+                  />
+                  {/* Fallback div - hidden by default */}
+                  <div 
+                    className="absolute inset-0 bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center hidden"
+                    style={{ display: 'none' }}
+                  >
+                    <div className="text-4xl font-bold text-primary/30">
+                      {product.title.charAt(0)}
+                    </div>
                   </div>
                 </div>
                 
@@ -238,6 +322,25 @@ export const StoreSection = ({ language }: StoreSectionProps) => {
                 <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-lg px-2 py-1 flex items-center space-x-1">
                   <Star className="w-4 h-4 fill-yellow-400 text-yellow-400" />
                   <span className="text-sm font-medium">{product.rating}</span>
+                </div>
+
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-black/60 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
+                  <Button 
+                    size="sm" 
+                    variant="secondary"
+                    onClick={() => openLink(product.demoUrl, 'demo', product.title)}
+                  >
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    {text.viewDemo}
+                  </Button>
+                  <Button 
+                    size="sm" 
+                    onClick={() => handlePurchase(product)}
+                  >
+                    <ShoppingCart className="w-4 h-4 mr-2" />
+                    {text.buyNow}
+                  </Button>
                 </div>
               </div>
               
@@ -301,13 +404,27 @@ export const StoreSection = ({ language }: StoreSectionProps) => {
                 
                 {/* Action Buttons */}
                 <div className="flex space-x-3">
-                  <Button className="flex-1">
+                  <Button 
+                    className="flex-1"
+                    onClick={() => handlePurchase(product)}
+                  >
                     <ShoppingCart className="w-4 h-4 mr-2" />
                     {text.buyNow}
                   </Button>
-                  <Button variant="outline">
+                  <Button 
+                    variant="outline"
+                    onClick={() => openLink(product.demoUrl, 'demo', product.title)}
+                  >
                     <ExternalLink className="w-4 h-4 mr-2" />
                     {text.viewDemo}
+                  </Button>
+                  <Button 
+                    variant="ghost" 
+                    size="sm"
+                    onClick={() => openLink(product.downloadUrl, 'download', product.title)}
+                    className="px-3"
+                  >
+                    <Download className="w-4 h-4" />
                   </Button>
                 </div>
               </div>
@@ -338,7 +455,12 @@ export const StoreSection = ({ language }: StoreSectionProps) => {
                 : 'I can build custom software solutions tailored to your specific needs. Contact me for a free consultation.'
               }
             </p>
-            <Button size="lg" variant="outline">
+            <Button 
+              size="lg" 
+              variant="outline"
+              onClick={() => openLink("mailto:your.email@example.com?subject=Custom Software Inquiry", 'contact')}
+            >
+              <Mail className="w-4 h-4 mr-2" />
               {language === 'km' ? 'ទំនាក់ទំនងសម្រាប់គម្រោងតាមតម្រូវការ' : 'Contact for Custom Project'}
             </Button>
           </Card>

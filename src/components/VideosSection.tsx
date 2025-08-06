@@ -19,9 +19,10 @@ export const VideosSection = ({ language }: VideosSectionProps) => {
       likes: "likes",
       videos: [
         {
-          title: "Building a Laravel E-commerce App",
-          description: "Complete tutorial series on building an e-commerce platform using Laravel and Vue.js",
-          thumbnail: "/api/placeholder/400/225",
+          title: "Laravel E-commerce App",
+          description: "Complete Laravel E-commerce tutorial.",
+          thumbnail: "/images/profile.jpg",
+          youtubeUrl: "https://www.youtube.com/watch?v=G3LGVZ17Z3M",
           duration: "45:30",
           views: "12.5K",
           likes: "340",
@@ -30,15 +31,16 @@ export const VideosSection = ({ language }: VideosSectionProps) => {
           featured: true
         },
         {
-          title: "React Hooks Explained (Khmer)",
-          description: "Understanding React Hooks with practical examples explained in Khmer language",
-          thumbnail: "/api/placeholder/400/225",
-          duration: "28:15",
-          views: "8.2K",
-          likes: "256",
-          publishDate: "2024-01-10",
+          title: "React Portfolio Website",
+          description: "Build a React portfolio website from scratch.",
+          thumbnail: "https://img.youtube.com/vi/dGcsHMXbSOA/hqdefault.jpg",
+          youtubeUrl: "https://www.youtube.com/watch?v=dGcsHMXbSOA",
+          duration: "38:15",
+          views: "22.1K",
+          likes: "580",
+          publishDate: "2024-02-10",
           category: "React",
-          featured: true
+          featured: false
         },
         {
           title: "Database Design Best Practices",
@@ -98,7 +100,8 @@ export const VideosSection = ({ language }: VideosSectionProps) => {
         {
           title: "បង្កើតកម្មវិធីពាណិជ្ជកម្មជាមួយ Laravel",
           description: "ការបង្រៀនពេញលេញអំពីការបង្កើតវេទិកាពាណិជ្ជកម្មដោយប្រើ Laravel និង Vue.js",
-          thumbnail: "/api/placeholder/400/225",
+          thumbnail: "/images/profile.jpg",
+          youtubeUrl: "https://www.youtube.com/watch?v=G3LGVZ17Z3M",
           duration: "៤៥:៣០",
           views: "១២.៥K",
           likes: "៣៤០",
@@ -167,6 +170,10 @@ export const VideosSection = ({ language }: VideosSectionProps) => {
 
   const text = content[language as keyof typeof content] || content.km;
 
+  const openVideo = (url: string) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <section id="videos" className="py-20">
       <div className="container mx-auto px-4">
@@ -180,96 +187,133 @@ export const VideosSection = ({ language }: VideosSectionProps) => {
 
         {/* Featured Videos */}
         <div className="grid md:grid-cols-2 gap-8 mb-12">
-          {text.videos.filter(video => video.featured).map((video, index) => (
-            <Card key={index} className="overflow-hidden group hover:shadow-xl transition-all duration-300">
-              <div className="relative">
-                <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-black/40 to-black/20"></div>
-                  <Play className="w-16 h-16 text-white/80 group-hover:scale-110 transition-transform z-10" />
-                  <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
-                    {video.duration}
+          {text.videos
+            .filter((video) => video.featured)
+            .map((video, index) => (
+              <Card
+                key={index}
+                className="overflow-hidden group hover:shadow-xl transition-all duration-300"
+              >
+                <div className="relative">
+                  <div 
+                    className="aspect-video relative overflow-hidden cursor-pointer group"
+                    onClick={() => openVideo(video.youtubeUrl ?? "#")}
+                  >
+                    <img
+                      src={video.thumbnail}
+                      alt={video.title}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/30 group-hover:bg-black/40 transition-all"></div>
+                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                        <Play className="w-8 h-8 text-white ml-1" />
+                      </div>
+                    </div>
+                    <div className="absolute bottom-2 right-2 bg-black/70 text-white text-xs px-2 py-1 rounded">
+                      {video.duration}
+                    </div>
+                    <Badge className="absolute top-2 left-2 bg-primary">{video.category}</Badge>
                   </div>
-                  <Badge className="absolute top-2 left-2 bg-primary">
-                    {video.category}
-                  </Badge>
                 </div>
-                <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-              
-              <div className="p-6">
-                <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-xl font-semibold line-clamp-2 flex-1">
-                    {video.title}
-                  </h3>
-                  <Badge variant="secondary" className="ml-2">Featured</Badge>
-                </div>
-                
-                <p className="text-muted-foreground mb-4 leading-relaxed line-clamp-2">
-                  {video.description}
-                </p>
-                
-                <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
-                  <div className="flex items-center space-x-4">
-                    <div className="flex items-center space-x-1">
-                      <Eye className="w-4 h-4" />
-                      <span>{video.views} {text.views}</span>
+
+                <div className="p-6">
+                  <div className="flex items-start justify-between mb-3">
+                    <h3 className="text-xl font-semibold line-clamp-2 flex-1">
+                      {video.title}
+                    </h3>
+                    <Badge variant="secondary" className="ml-2">
+                      Featured
+                    </Badge>
+                  </div>
+
+                  <p className="text-muted-foreground mb-4 leading-relaxed line-clamp-2">
+                    {video.description}
+                  </p>
+
+                  <div className="flex items-center justify-between text-sm text-muted-foreground mb-4">
+                    <div className="flex items-center space-x-4">
+                      <div className="flex items-center space-x-1">
+                        <Eye className="w-4 h-4" />
+                        <span>
+                          {video.views} {text.views}
+                        </span>
+                      </div>
+                      <div className="flex items-center space-x-1">
+                        <ThumbsUp className="w-4 h-4" />
+                        <span>
+                          {video.likes} {text.likes}
+                        </span>
+                      </div>
                     </div>
                     <div className="flex items-center space-x-1">
-                      <ThumbsUp className="w-4 h-4" />
-                      <span>{video.likes} {text.likes}</span>
+                      <Calendar className="w-4 h-4" />
+                      <span>
+                        {new Date(video.publishDate).toLocaleDateString()}
+                      </span>
                     </div>
                   </div>
-                  <div className="flex items-center space-x-1">
-                    <Calendar className="w-4 h-4" />
-                    <span>{new Date(video.publishDate).toLocaleDateString()}</span>
-                  </div>
+
+                  <Button
+                    className="w-full"
+                    onClick={() => openVideo(video.youtubeUrl ?? "#")}
+                  >
+                    <Play className="w-4 h-4 mr-2" />
+                    {text.watchNow}
+                  </Button>
                 </div>
-                
-                <Button className="w-full">
-                  <Play className="w-4 h-4 mr-2" />
-                  {text.watchNow}
-                </Button>
-              </div>
-            </Card>
-          ))}
+              </Card>
+            ))}
         </div>
 
         {/* Other Videos Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {text.videos.filter(video => !video.featured).map((video, index) => (
-            <Card key={index} className="overflow-hidden group hover:shadow-lg transition-all duration-300">
-              <div className="relative">
-                <div className="aspect-video bg-gradient-to-br from-secondary/20 to-primary/10 flex items-center justify-center">
-                  <Play className="w-8 h-8 text-primary/70 group-hover:scale-110 transition-transform" />
-                  <div className="absolute bottom-1 right-1 bg-black/70 text-white text-xs px-1 py-0.5 rounded">
-                    {video.duration}
-                  </div>
-                  <Badge className="absolute top-1 left-1 text-xs bg-primary">
-                    {video.category}
-                  </Badge>
-                </div>
-              </div>
-              
-              <div className="p-4">
-                <h3 className="font-semibold mb-2 text-sm line-clamp-2">
-                  {video.title}
-                </h3>
-                
-                <div className="flex items-center justify-between text-xs text-muted-foreground mb-3">
-                  <div className="flex items-center space-x-2">
-                    <span>{video.views}</span>
-                    <span>•</span>
-                    <span>{video.likes}</span>
+          {text.videos
+            .filter((video) => !video.featured)
+            .map((video, index) => (
+              <Card
+                key={index}
+                className="overflow-hidden group hover:shadow-lg transition-all duration-300"
+              >
+                <div className="relative">
+                  <div
+                    className="aspect-video bg-gradient-to-br from-secondary/20 to-primary/10 flex items-center justify-center relative group cursor-pointer"
+                    onClick={() => openVideo(video.youtubeUrl ?? "#")}
+                  >
+                    <div className="w-8 h-8 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center">
+                      <Play className="w-4 h-4 text-primary/70 group-hover:scale-110 transition-transform" />
+                    </div>
+                    <div className="absolute bottom-1 right-1 bg-black/70 text-white text-xs px-1 py-0.5 rounded">
+                      {video.duration}
+                    </div>
+                    <Badge className="absolute top-1 left-1 text-xs bg-primary">{video.category}</Badge>
                   </div>
                 </div>
-                
-                <Button size="sm" className="w-full text-xs">
-                  <Play className="w-3 h-3 mr-1" />
-                  {text.watchNow}
-                </Button>
-              </div>
-            </Card>
-          ))}
+
+                <div className="p-4">
+                  <h3 className="font-semibold mb-2 text-sm line-clamp-2">
+                    {video.title}
+                  </h3>
+
+                  <div className="flex items-center justify-between text-xs text-muted-foreground mb-3">
+                    <div className="flex items-center space-x-2">
+                      <span>{video.views}</span>
+                      <span>•</span>
+                      <span>{video.likes}</span>
+                    </div>
+                  </div>
+
+                  <Button
+                    size="sm"
+                    className="w-full text-xs"
+                    onClick={() => openVideo(video.youtubeUrl ?? "#")}
+                  >
+                    <Play className="w-3 h-3 mr-1" />
+                    {text.watchNow}
+                  </Button>
+                </div>
+              </Card>
+            ))}
         </div>
 
         {/* YouTube Channel CTA */}
@@ -281,13 +325,22 @@ export const VideosSection = ({ language }: VideosSectionProps) => {
               </div>
               <div className="text-left">
                 <h3 className="font-semibold">
-                  {language === 'km' ? 'តាមដានប៉ុស្តិ៍ YouTube' : 'Subscribe to YouTube Channel'}
+                  {language === "km"
+                    ? "តាមដានប៉ុស្តិ៍ YouTube"
+                    : "Subscribe to YouTube Channel"}
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  {language === 'km' ? 'ទទួលបានការបង្រៀនថ្មីៗ' : 'Get the latest tutorials and updates'}
+                  {language === "km"
+                    ? "ទទួលបានការបង្រៀនថ្មីៗ"
+                    : "Get the latest tutorials and updates"}
                 </p>
               </div>
-              <Button variant="outline">
+              <Button
+                variant="outline"
+                onClick={() =>
+                  window.open("https://www.youtube.com/", "_blank") // Change to your channel URL
+                }
+              >
                 {text.viewChannel}
               </Button>
             </div>

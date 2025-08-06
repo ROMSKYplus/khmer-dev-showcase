@@ -10,9 +10,9 @@ export const HeroSection = ({ language }: HeroSectionProps) => {
   const content = {
     en: {
       greeting: "Hello, I'm",
-      name: "Khmer Developer",
+      name: "Heng sophearom",
       title: "Full-Stack Developer & Software Creator",
-      description: "Building innovative web applications and software solutions with modern technologies. Specialized in React, Laravel, and creating digital experiences that matter.",
+      // description: "Building innovative web applications and software solutions with modern technologies. Specialized in React, Laravel, and creating digital experiences that matter.",
       cta1: "Explore My Work",
       cta2: "Hire Me",
       cta3: "Download CV",
@@ -24,9 +24,9 @@ export const HeroSection = ({ language }: HeroSectionProps) => {
     },
     km: {
       greeting: "ជំរាបសួរ ខ្ញុំគឺជា",
-      name: "អ្នកបង្កើតកម្មវិធី",
+      name: "ហេង សុភារម្យ",
       title: "អ្នកបង្កើតកម្មវិធី និងអ្នកបង្កើតសូហ្វវែរ",
-      description: "បង្កើតកម្មវិធីវេបសាយទំនើប និងដំណោះស្រាយសូហ្វវែរជាមួយនឹងបច្ចេកវិទ្យាទំនើប។ ជំនាញលើ React, Laravel និងបង្កើតបទពិសោធន៍ឌីជីថលដែលមានន័យ។",
+      // description: "បង្កើតកម្មវិធីវេបសាយទំនើប និងដំណោះស្រាយសូហ្វវែរជាមួយនឹងបច្ចេកវិទ្យាទំនើប។ ជំនាញលើ React, Laravel និងបង្កើតបទពិសោធន៍ឌីជីថលដែលមានន័យ។",
       cta1: "មើលការងារ",
       cta2: "ជួល",
       cta3: "ទាញយក CV",
@@ -44,9 +44,9 @@ export const HeroSection = ({ language }: HeroSectionProps) => {
     <section id="home" className="min-h-screen pt-20 pb-16 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 angkor-pattern opacity-30"></div>
-      
+
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-5rem)]">
+        <div className="grid lg:grid-cols-2 gap-10 items-center min-h-[calc(100vh-7rem)]">
           {/* Content */}
           <div className="space-y-8">
             <div className="space-y-4">
@@ -58,30 +58,30 @@ export const HeroSection = ({ language }: HeroSectionProps) => {
                 {text.title}
               </h2>
             </div>
-            
+
             <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
               {text.description}
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap gap-4">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="bg-gradient-to-r from-primary to-primary-glow hover:from-primary-glow hover:to-primary transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 {text.cta1}
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="lg"
                 className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
               >
                 <MessageCircle className="mr-2 w-4 h-4" />
                 {text.cta2}
               </Button>
-              <Button 
-                variant="ghost" 
+              <Button
+                variant="ghost"
                 size="lg"
                 className="text-muted-foreground hover:text-foreground"
               >
@@ -111,14 +111,15 @@ export const HeroSection = ({ language }: HeroSectionProps) => {
               {/* Decorative elements */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full -translate-y-16 translate-x-16"></div>
               <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-accent/20 to-primary/20 rounded-full translate-y-12 -translate-x-12"></div>
-              
+
               <div className="relative z-10 space-y-6">
-                <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-primary to-accent p-1">
-                  <div className="w-full h-full rounded-full bg-background flex items-center justify-center">
-                    <span className="text-4xl font-bold text-primary">KD</span>
-                  </div>
+                <div className="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-primary shadow-lg">
+                  <img
+                    src="/images/profile.jpg"
+                    alt="Heng Sophearom profile photo"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                
                 <div className="text-center space-y-2">
                   <h3 className="text-xl font-semibold">Full-Stack Developer</h3>
                   <p className="text-muted-foreground">React • Laravel • Node.js</p>
